@@ -1,7 +1,34 @@
 ﻿@page "/Projects/"
+@page "/Projects/{listingName}"
 
-<h3>Projects</h3>
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using System.IO
+
+@inject HttpClient Http
+
+@if (Listings != null)
+{
+    <ListingsBlock ParentPage="Projects" Listings="@Listings" ListingName="@ListingName" />
+}
+else
+{
+    <span>Loading listings ...</span>
+}
 
 @code {
+    [Parameter]
+    public string ListingName { get; set; }
 
+    public List<Listing> Listings { get; set; }
+
+    public JsonSerializerOptions SerializerOptions => new JsonSerializerOptions
+    {
+        AllowTrailingCommas = true,
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        Listings = new List<Listing>(await Http.GetFromJsonAsync<Listing[]>("listings-json/projects.json", SerializerOptions));
+    }
 }

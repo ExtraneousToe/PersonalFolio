@@ -1,0 +1,50 @@
+﻿@*<div>@ListingName</div>
+    <div>@ParentPage</div>*@
+
+@if (Listings != null)
+{
+    Listing listing = null;
+    @if (!string.IsNullOrEmpty(ListingName))
+    {
+        listing = Listings.FirstOrDefault(l => l.NameWithoutWhitespace.Equals(ListingName));
+    }
+
+    if (listing != null)
+    {
+        <FullListingDisplay ListingItem="listing" />
+
+        <a href="@ParentPage">Back</a>
+    }
+    else
+    {
+        <h3>@ParentPage</h3>
+
+        @if (Listings.Count > 0)
+        {
+            <div class="listing-parent">
+                @foreach (Listing listingItem in Listings)
+                {
+                    <ListingDisplayItem ListingItem="listingItem" Page="@ParentPage" />
+                }
+            </div>
+        }
+        else
+        {
+            <div>
+                No listings at this time.
+            </div>
+        }
+    }
+}
+
+@code
+{
+    [Parameter]
+    public string ListingName { get; set; }
+
+    [Parameter]
+    public string ParentPage { get; set; }
+
+    [Parameter]
+    public List<Listing> Listings { get; set; }
+}

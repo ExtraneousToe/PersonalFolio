@@ -1,7 +1,35 @@
 ﻿@page "/Applications/"
+@page "/Applications/{listingName}"
 
-<h3>Applications</h3>
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using System.IO
+@using BlazorApp.Shared
+
+@inject HttpClient Http
+
+@if (Listings != null)
+{
+    <ListingsBlock ParentPage="Applications" Listings="@Listings" ListingName="@ListingName" />
+}
+else
+{
+    <span>Loading listings ...</span>
+}
 
 @code {
+    [Parameter]
+    public string ListingName { get; set; }
 
+    public List<Listing> Listings { get; set; }
+
+    public JsonSerializerOptions SerializerOptions => new JsonSerializerOptions
+    {
+        AllowTrailingCommas = true,
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        Listings = new List<Listing>(await Http.GetFromJsonAsync<Listing[]>("listings-json/applications.json", SerializerOptions));
+    }
 }

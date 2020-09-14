@@ -1,4 +1,5 @@
 ﻿@page "/Games/"
+@page "/Games/{listingName}"
 
 @using System.Text.Json
 @using System.Text.Json.Serialization
@@ -7,17 +8,19 @@
 
 @inject HttpClient Http
 
-<h3>Games</h3>
-
 @if (Listings != null)
 {
-    @foreach (Listing listing in Listings)
-    {
-        <ListingDisplay ListingItem="listing" />
-    }
+    <ListingsBlock ParentPage="Games" Listings="@Listings" ListingName="@ListingName"/>
+}
+else
+{
+    <span>Loading listings ...</span>
 }
 
 @code {
+    [Parameter]
+    public string ListingName { get; set; }
+
     public List<Listing> Listings { get; set; }
 
     public JsonSerializerOptions SerializerOptions => new JsonSerializerOptions
@@ -27,9 +30,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        Listings = new List<Listing>(await Http.GetFromJsonAsync<Listing[]>("listings-json/games.json"));
-
-        //string jsonFileText = await File.ReadAllTextAsync("/listings-json/games.json");
-        //Listings = new List<Listing>(JsonSerializer.Deserialize<Listing[]>(jsonFileText, SerializerOptions));
+        Listings = new List<Listing>(await Http.GetFromJsonAsync<Listing[]>("listings-json/games.json", SerializerOptions));
     }
 }

@@ -1,12 +1,11 @@
 [
   //{
-  //  "Name": "Pirates",
+  //  "Name": "Application",
   //  "Description": [
-  //    "This is a game about pirates.",
-  //    "Hot damn"
+  //    "This is an application"
   //  ],
   //  "RepositoryLink": "repo-link",
   //  "GHPagesLink": "pages-link",
-  //  "Status": 3
+  //  "Status" : 0
   //},
 ]

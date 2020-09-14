@@ -1,13 +1,11 @@
-﻿@using BlazorApp.Shared
-
-<div class="border">
+﻿<div class="border listing-item">
     @if (ListingItem == null)
     {
         <span class="alert">No ListingItem applied to component</span>
     }
     else
     {
-        <div>@ListingItem.Name</div>
+        <div><a href="@($"{Page}/{ListingItem.NameWithoutWhitespace}")">@ListingItem.Name</a></div>
         <div>
             @foreach (string para in ListingItem.Description)
             {
@@ -18,10 +16,14 @@
         </div>
         <div>@ListingItem.RepositoryLink</div>
         <div>@ListingItem.GHPagesLink</div>
+        <div>@ListingItem.StatusAsString</div>
     }
 </div>
 
 @code {
+    [Parameter]
+    public string Page { get; set; }
+
     [Parameter]
     public Listing ListingItem { get; set; }
 }
