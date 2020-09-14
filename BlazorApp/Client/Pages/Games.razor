@@ -1,0 +1,35 @@
+﻿@page "/Games/"
+
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using System.IO
+@using BlazorApp.Shared
+
+@inject HttpClient Http
+
+<h3>Games</h3>
+
+@if (Listings != null)
+{
+    @foreach (Listing listing in Listings)
+    {
+        <ListingDisplay ListingItem="listing" />
+    }
+}
+
+@code {
+    public List<Listing> Listings { get; set; }
+
+    public JsonSerializerOptions SerializerOptions => new JsonSerializerOptions
+    {
+        AllowTrailingCommas = true,
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        Listings = new List<Listing>(await Http.GetFromJsonAsync<Listing[]>("listings-json/games.json"));
+
+        //string jsonFileText = await File.ReadAllTextAsync("/listings-json/games.json");
+        //Listings = new List<Listing>(JsonSerializer.Deserialize<Listing[]>(jsonFileText, SerializerOptions));
+    }
+}

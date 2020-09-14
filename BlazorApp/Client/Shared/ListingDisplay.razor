@@ -1,0 +1,27 @@
+﻿@using BlazorApp.Shared
+
+<div class="border">
+    @if (ListingItem == null)
+    {
+        <span class="alert">No ListingItem applied to component</span>
+    }
+    else
+    {
+        <div>@ListingItem.Name</div>
+        <div>
+            @foreach (string para in ListingItem.Description)
+            {
+                <p>
+                    @para
+                </p>
+            }
+        </div>
+        <div>@ListingItem.RepositoryLink</div>
+        <div>@ListingItem.GHPagesLink</div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public Listing ListingItem { get; set; }
+}
