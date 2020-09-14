@@ -14,8 +14,20 @@
                 </p>
             }
         </div>
-        <div>@ListingItem.RepositoryLink</div>
-        <div>@ListingItem.GHPagesLink</div>
+        @if (!string.IsNullOrEmpty(ListingItem.RepositoryLink))
+        {
+            <a href="@ListingItem.RepositoryLink" target="_blank">
+                Repository Page
+            </a>
+        }
+        @if (!string.IsNullOrEmpty(ListingItem.GHPagesLink))
+        {
+            <div>
+                <a href="@ListingItem.GHPagesLink" target="_blank">
+                    GitHub Pages Page
+                </a>
+            </div>
+        }
         <div>@ListingItem.StatusAsString</div>
     }
 </div>
