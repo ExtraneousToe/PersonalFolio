@@ -1,11 +1,21 @@
 [
-  //{
-  //  "Name": "Project",
-  //  "Description": [
-  //    "This is a project."
-  //  ],
-  //  "RepositoryLink": "repo-link",
-  //  "GHPagesLink": "pages-link",
-  //  "Status": 1
-  //},
+  {
+    "Name": "Unity Tools",
+    "Description": [
+      "A collection of tools made available through the Unity Package Manager"
+    ],
+    "RepositoryLink": "https://github.com/MattCameron1991/Unity-Tools",
+    "GHPagesLink": "",
+    "Status": "InDevelopment"
+  },
+  {
+    "Name": "Maze Generator",
+    "Description": [
+      "This project is designed to make maze generator easier.",
+      "The eventual goal will be to make this a package that can be included using the Unity Package Manager."
+    ],
+    "RepositoryLink": "https://github.com/MattCameron1991/MazeGenerator",
+    "GHPagesLink": "",
+    "Status": "InDevelopment"
+  }
 ]
