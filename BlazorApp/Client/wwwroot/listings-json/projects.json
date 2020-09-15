@@ -11,7 +11,7 @@
   {
     "Name": "Maze Generator",
     "Description": [
-      "This project is designed to make maze generator easier.",
+      "This project is designed to make maze generation easier.",
       "The eventual goal will be to make this a package that can be included using the Unity Package Manager."
     ],
     "RepositoryLink": "https://github.com/MattCameron1991/MazeGenerator",
