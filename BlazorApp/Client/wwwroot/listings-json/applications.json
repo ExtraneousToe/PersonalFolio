@@ -2,6 +2,7 @@
     {
         "Name": "D&D Tools",
         "Description": [
+            "Development started in 2020, when I started DMing.",
             "A collection of references and eventually tools that I've made to suppliment my D&D games."
         ],
         "RepositoryLink": "https://github.com/MattCameron1991/BlazorDnDTools",
