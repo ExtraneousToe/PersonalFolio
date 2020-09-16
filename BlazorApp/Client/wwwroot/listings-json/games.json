@@ -1,2 +1,9 @@
 [
+    {
+        "Name": "Crate Checker",
+        "Description": ["Basically Mine Sweeper."],
+        "RepositoryLink": "https://github.com/MattCameron1991/CrateChecker",
+        "GHPagesLink": "https://mattcameron1991.github.io/CrateChecker/",
+        "Status": "Complete"
+    }
 ]
