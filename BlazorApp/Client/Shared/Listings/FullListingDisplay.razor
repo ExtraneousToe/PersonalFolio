@@ -1,4 +1,50 @@
-﻿<h3>FullListingDisplay @ListingItem.Name</h3>
+﻿@if (ListingItem == null)
+{
+    <span class="alert">No ListingItem applied to component</span>
+}
+else
+{
+    <h1>@ListingItem.Name</h1>
+    <div>
+        <strong>Status:</strong> @ListingItem.StatusAsString
+        @if (!string.IsNullOrEmpty(ListingItem.StatusNotes))
+        {
+            <span>
+                - <i>@ListingItem.StatusNotes</i>
+            </span>
+        }
+    </div>
+    <br />
+    <div>
+        <h5>Links:</h5>
+        @if (!string.IsNullOrEmpty(ListingItem.RepositoryLink))
+        {
+            <div>
+                <a href="@ListingItem.RepositoryLink" target="_blank">
+                    Repository Page
+                </a>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(ListingItem.GHPagesLink))
+        {
+            <div>
+                <a href="@ListingItem.GHPagesLink" target="_blank">
+                    GitHub Pages Page
+                </a>
+            </div>
+        }
+    </div>
+    <br />
+    <div>
+        <h5>Description:</h5>
+        @foreach (string para in ListingItem.Description)
+        {
+            <p>
+                @para
+            </p>
+        }
+    </div>
+}
 
 @code {
     [Parameter]

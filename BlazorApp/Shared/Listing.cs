@@ -76,6 +76,8 @@ namespace BlazorApp.Shared
         [JsonConverter(typeof(ListingStatusConverter))]
         public ListingStatus Status { get; set; }
 
+        public string StatusNotes { get; set; }
+
         [JsonIgnore]
         public string StatusAsString
         {

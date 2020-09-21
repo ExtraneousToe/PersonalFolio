@@ -5,20 +5,26 @@
     }
     else
     {
-        <div><a href="@($"{Page}/{ListingItem.NameWithoutWhitespace}")">@ListingItem.Name</a></div>
+        <h4><a href="@($"{Page}/{ListingItem.NameWithoutWhitespace}")">@ListingItem.Name</a></h4>
         <div>
-            @foreach (string para in ListingItem.Description)
+            <strong>Status:</strong> @ListingItem.StatusAsString
+            @if (!string.IsNullOrEmpty(ListingItem.StatusNotes))
             {
-                <p>
-                    @para
-                </p>
+                <span>
+                    - <i>@ListingItem.StatusNotes</i>
+                </span>
             }
         </div>
+    <br />
+    <div>
+        <h5>Links:</h5>
         @if (!string.IsNullOrEmpty(ListingItem.RepositoryLink))
         {
-            <a href="@ListingItem.RepositoryLink" target="_blank">
-                Repository Page
-            </a>
+            <div>
+                <a href="@ListingItem.RepositoryLink" target="_blank">
+                    Repository Page
+                </a>
+            </div>
         }
         @if (!string.IsNullOrEmpty(ListingItem.GHPagesLink))
         {
@@ -28,7 +34,7 @@
                 </a>
             </div>
         }
-        <div>@ListingItem.StatusAsString</div>
+    </div>
     }
 </div>
 
