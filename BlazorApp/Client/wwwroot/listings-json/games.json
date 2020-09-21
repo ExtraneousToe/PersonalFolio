@@ -1,5 +1,26 @@
 [
     {
+        "Name": "Pirate Arena",
+        "Description": ["Developed in late 2014."],
+        "RepositoryLink": "",
+        "GHPagesLink": "https://mattcameron1991.github.io/PirateArena/",
+        "Status": "Complete"
+    },
+    {
+        "Name": "Space Goober Launcher",
+        "Description": ["Developed in 2015."],
+        "RepositoryLink": "",
+        "GHPagesLink": "https://mattcameron1991.github.io/SpaceGooberLauncher/",
+        "Status": "Complete"
+    },
+    {
+        "Name": "Idle Nebulae Harvester",
+        "Description": ["Developed in 2015."],
+        "RepositoryLink": "",
+        "GHPagesLink": "https://mattcameron1991.github.io/IdleNebulaeHarvester/",
+        "Status": "Complete"
+    },
+    {
         "Name": "Crate Checker",
         "Description": ["Developed in 2015.", "Basically Mine Sweeper."],
         "RepositoryLink": "https://github.com/MattCameron1991/CrateChecker",
