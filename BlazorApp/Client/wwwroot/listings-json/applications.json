@@ -8,5 +8,15 @@
         "RepositoryLink": "https://github.com/MattCameron1991/BlazorDnDTools",
         "GHPagesLink": "https://MattCameron1991.github.io/BlazorDnDTools/",
         "Status": "InDevelopment"
+    },
+    {
+        "Name": "Melbourne Attractions",
+        "Description": [
+            "Built using ReactJS.",
+            "Currently reads a json file of attractions around Melbourne and displays them using React components"
+        ],
+        "RepositoryLink": "https://github.com/MattCameron1991/MelbourneAttractions",
+        "GHPagesLink": "https://MattCameron1991.github.io/MelbourneAttractions/",
+        "Status": "InDevelopment"
     }
 ]
