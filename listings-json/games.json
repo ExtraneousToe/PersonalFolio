@@ -1,0 +1,43 @@
+[
+    {
+        "Name": "Pirate Arena",
+        "Description": [
+            "Developed in late 2014.",
+            "Repo private due to assets used."
+        ],
+        "RepositoryLink": "",
+        "GHPagesLink": "https://mattcameron1991.github.io/PirateArena/",
+        "Status": "Complete",
+        "StatusNotes": "Developed in Unity 5, some packages used previously now outdated. Some things broken."
+    },
+    {
+        "Name": "Space Goober Launcher",
+        "Description": [
+            "Developed in 2015.",
+            "Repo private due to assets used."
+        ],
+        "RepositoryLink": "",
+        "GHPagesLink": "https://mattcameron1991.github.io/SpaceGooberLauncher/",
+        "Status": "Complete",
+        "StatusNotes": "Developed in Unity 5, some packages used previously now outdated. Some things broken."
+    },
+    {
+        "Name": "Idle Nebulae Harvester",
+        "Description": [
+            "Developed in 2015.",
+            "Repo private due to assets used."
+        ],
+        "RepositoryLink": "",
+        "GHPagesLink": "https://mattcameron1991.github.io/IdleNebulaeHarvester/",
+        "Status": "Complete",
+        "StatusNotes": "Developed in Unity 5, some packages used previously now outdated. Some things broken."
+    },
+    {
+        "Name": "Crate Checker",
+        "Description": ["Developed in 2015.", "Basically Mine Sweeper."],
+        "RepositoryLink": "https://github.com/MattCameron1991/CrateChecker",
+        "GHPagesLink": "https://mattcameron1991.github.io/CrateChecker/",
+        "Status": "Complete",
+        "StatusNotes": "Developed in Unity 5, some packages used previously now outdated. Some things broken."
+    }
+]

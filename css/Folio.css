@@ -1,0 +1,22 @@
+﻿
+.listing-parent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+.listing-item {
+    width: 32%;
+    margin: 1px 1px 1px 1px;
+    padding: 1px 1px 1px 1px
+}
+
+@media (max-width: 767.98px) {
+    .listing-item {
+        width: 100%
+    }
+}
+
+@media (min-width: 768px) {
+}
